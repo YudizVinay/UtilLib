@@ -5,7 +5,7 @@ AAR File
 https://github.com/YudizVinay/UtilLib/raw/master/utilLib-1.3/utilLib-1.3.aar
 
 
-// dialog with camera and gallery
+dialog with camera and gallery
 ```
 UtilLib.getPhoto(this, ChooseType.REQUEST_ANY)
      .enqueue(new OnImageChooserListener() {
@@ -16,7 +16,7 @@ UtilLib.getPhoto(this, ChooseType.REQUEST_ANY)
      });
 ```
 
-// Runtime Permission
+Runtime Permission
 ```
 UtilLib.getPermission(this, new String[]{ Manifest.permission.CAMERA }, 12)
     .enqueue(new PermissionResultCallback() {
@@ -27,22 +27,22 @@ UtilLib.getPermission(this, new String[]{ Manifest.permission.CAMERA }, 12)
     });
 ```
 
-// get location from either GPS or Network
+get location from either GPS or Network
 ```
 UtilLib.getLocationManager(MainActivity.this).getLocation(new OnLocationPickListener() {
     @Override
     public void getLastLocation(Location location) {
-        locationInfo.setText("lng:" + location.getLongitude() + " lat:" + location.getLatitude());
+        Log.d("Tag", "lng:" + location.getLongitude() + " lat:" + location.getLatitude());
     }
 
     @Override
     public void onLocationChanged(Location location) {
-        locationInfo.setText("lng:" + location.getLongitude() + " lat:" + location.getLatitude());
+        Log.d("Tag", ""lng:" + location.getLongitude() + " lat:" + location.getLatitude());
     }
 
     @Override
     public void onError(String error) {
-        Toast.makeText(MainActivity.this, "Location Error." + error, Toast.LENGTH_LONG).show();
+        Log.d("Tag", "Location Error." + error);
     }
 });
 ```
