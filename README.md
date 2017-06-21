@@ -22,7 +22,7 @@ UtilLib.getPermission(mContext, new String[]{ Manifest.permission.CAMERA }, 12)
     .enqueue(new PermissionResultCallback() {
         @Override
         public void onComplete(PermissionResponse permissionResponse) {
-             Log.d("Tag", "CAMERA Permission is "+(permissionResponse.isAllGranted() ? "Enable" : "Disable"));
+             Log.d("Tag", "Permission is "+(permissionResponse.isAllGranted() ? "Enable" : "Disable"));
         }
     });
 ```
