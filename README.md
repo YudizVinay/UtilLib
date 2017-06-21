@@ -18,7 +18,7 @@ UtilLib.getPhoto(this, ChooseType.REQUEST_ANY)
 
 // Runtime Permission
 ```
-PermissionEverywhere.getPermission(this, new String[]{ Manifest.permission.CAMERA }, 12)
+UtilLib.getPermission(this, new String[]{ Manifest.permission.CAMERA }, 12)
     .enqueue(new PermissionResultCallback() {
         @Override
         public void onComplete(PermissionResponse permissionResponse) {
