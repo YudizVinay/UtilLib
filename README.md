@@ -2,10 +2,12 @@
 Library contains Location, Run time Permission, Image chooser in Android Project
 
 AAR File
-https://github.com/YudizVinay/UtilLib/raw/master/utilLib-1.3/utilLib-1.3.aar
+https://github.com/YudizVinay/UtilLib/raw/master/utilLib-1.1/utilLib-1.1.aar
 
 
 dialog with camera and gallery
+and you can choose image from Camera directly without dialog with `ChooseType.REQUEST_CAPTURE_PICTURE`
+or you can choose image from Gallery directly without dialog with `ChooseType.REQUEST_PICK_PICTURE`
 ```
 UtilLib.getPhoto(mContext, ChooseType.REQUEST_ANY)
      .enqueue(new OnImageChooserListener() {

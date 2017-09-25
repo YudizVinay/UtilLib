@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,7 +53,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.imagechoose:
                 // dialog with camera and gallery
-                UtilLib.getPhoto(this, ChooseType.REQUEST_ANY)
+                ChooseType chooseType =
+                        ((RadioButton) findViewById(R.id.choose_gallery)).isChecked() ? ChooseType.REQUEST_PICK_PICTURE :
+                                ((RadioButton) findViewById(R.id.choose_camera)).isChecked() ? ChooseType.REQUEST_CAPTURE_PICTURE :
+                                        ChooseType.REQUEST_ANY;
+                UtilLib.getPhoto(this, chooseType)
                         .enqueue(new OnImageChooserListener() {
 
                             @Override
