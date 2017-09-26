@@ -2,7 +2,7 @@
 Library contains Location, Run time Permission, Image chooser in Android Project
 
 AAR File
-https://github.com/YudizVinay/UtilLib/raw/master/utillib-1.1/utillib-1.1.aar
+https://github.com/YudizVinay/UtilLib/raw/master/utillib-1.2/utillib-1.2.aar
 
 
 dialog with camera and gallery
@@ -20,7 +20,7 @@ UtilLib.getPhoto(mContext, ChooseType.REQUEST_ANY)
 
 Runtime Permission
 ```
-UtilLib.getPermission(mContext, new String[]{ Manifest.permission.CAMERA }, 12)
+UtilLib.getPermission(mContext, new String[]{ Manifest.permission.CAMERA })
     .enqueue(new PermissionResultCallback() {
         @Override
         public void onComplete(PermissionResponse permissionResponse) {
