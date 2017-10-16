@@ -22,7 +22,9 @@ import com.vinay.utillib.permissionutils.PermissionResultCallback;
 
 import java.io.File;
 
-
+/**
+ * created by Vinay Rathod
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView iv;
     private Button ivChoose, permissionCheck, getLocation;
