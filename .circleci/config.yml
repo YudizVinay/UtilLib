@@ -3,7 +3,7 @@ version: 2
 
 # Define the jobs for the current project.
 jobs:
-  build-and-test:
+  build:
 
     # Specify the Xcode version to use.
     working_directory: ~/code
@@ -39,4 +39,4 @@ workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - build-and-test
+      - build
