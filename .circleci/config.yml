@@ -1,42 +1,21 @@
-# Specify the config version - version 2 is latest.
-version: 2
+#
+# Build configuration for Circle CI
+#
 
-# Define the jobs for the current project.
-jobs:
-  build:
+general:
+    artifacts:
+        - /home/ubuntu/your-app-name/app/build/outputs/apk/
 
-    # Specify the Xcode version to use.
-    working_directory: ~/code
-      docker:
-        - image: circleci/android:api-25-alpha
-      environment:
-        JVM_OPTS: -Xmx3200m
+machine:
+    environment:
+        ANDROID_HOME: /usr/local/android-sdk-linux
 
-    # Define the steps required to build the project.
-    steps:
+dependencies:
+    override:
+        - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-21.1.2,android-21,extra-google-m2repository,extra-google-google_play_services,extra-android-support
+        - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
 
-      # Get code from Github
-      - checkout
-      - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-      - run:
-          name: Download Dependencies
-          command: ./gradlew androidDependencies
-      - save_cache:
-          paths:
-            - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-      - run:
-          name: Run Tests
-          command: ./gradlew lint test
-      - store_artifacts:
-          path: app/build/reports
-          destination: reports
-      - store_test_results:
-          path: app/build/test-results
-
-workflows:
-  version: 2
-  build-and-deploy:
-    jobs:
-      - build
+test:
+    override:
+        - (./gradlew assemble):
+            timeout: 360
