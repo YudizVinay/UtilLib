@@ -1,12 +1,21 @@
+# Specify the config version - version 2 is latest.
 version: 2
+
+# Define the jobs for the current project.
 jobs:
-  build:
+  build-and-test:
+
+    # Specify the Xcode version to use.
     working_directory: ~/code
-    docker:
-      - image: circleci/android:api-25-alpha
-    environment:
-      JVM_OPTS: -Xmx3200m
+      docker:
+        - image: circleci/android:api-25-alpha
+      environment:
+        JVM_OPTS: -Xmx3200m
+
+    # Define the steps required to build the project.
     steps:
+
+      # Get code from Github
       - checkout
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
@@ -25,3 +34,9 @@ jobs:
           destination: reports
       - store_test_results:
           path: app/build/test-results
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build-and-test
