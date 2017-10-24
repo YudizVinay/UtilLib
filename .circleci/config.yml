@@ -1,6 +1,7 @@
 #
 # Build configuration for Circle CI
 #
+version: 2
 
 general:
     artifacts:
