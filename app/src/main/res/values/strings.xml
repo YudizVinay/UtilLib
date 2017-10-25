@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Sample Lib</string>
+    <string name="google">&lt;a href="http://www.google.com">Google&lt;/a></string>
 </resources>

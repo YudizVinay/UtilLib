@@ -4,6 +4,8 @@ import android.Manifest;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -44,6 +46,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ivPath = (TextView) findViewById(R.id.imagepath);
         permissionStatus = (TextView) findViewById(R.id.permissionstatus);
         locationInfo = (TextView) findViewById(R.id.location);
+
+        ivPath.setMovementMethod(LinkMovementMethod.getInstance());
+        ivPath.setText(Html.fromHtml(getResources().getString(R.string.google)));
 
         ivChoose.setOnClickListener(this);
         permissionCheck.setOnClickListener(this);
