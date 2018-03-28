@@ -1,4 +1,5 @@
-# UtilLib
+# UtilLib  [![Download](https://api.bintray.com/packages/vinay/UtilLib/UtilLib/images/download.svg?version=1.0.0) ](https://bintray.com/vinay/UtilLib/UtilLib/1.0.0/link)
+
 Library contains Location, Run time Permission, Image chooser in Android Project
 
 AAR File
