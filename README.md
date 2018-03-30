@@ -1,4 +1,5 @@
- <a href='https://bintray.com/vinay/android/UtilLib?source=watch' alt='Get automatic notifications about new "UtilLib" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a> # UtilLib [ ![Download](https://api.bintray.com/packages/vinay/android/UtilLib/images/download.svg) ](https://bintray.com/vinay/android/UtilLib/_latestVersion)
+ <a href='https://bintray.com/vinay/android/UtilLib?source=watch' alt='Get automatic notifications about new "UtilLib" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a> 
+ # UtilLib [ ![Download](https://api.bintray.com/packages/vinay/android/UtilLib/images/download.svg) ](https://bintray.com/vinay/android/UtilLib/_latestVersion)
 
 Library contains Location, Run time Permission, Image chooser in Android Project
 
