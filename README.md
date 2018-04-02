@@ -3,8 +3,10 @@
 
 Library contains Location, Run time Permission, Image chooser in Android Project
 
-AAR File
-https://github.com/YudizVinay/UtilLib/raw/master/utillib-1.3/utillib-1.3.aar
+add a dependency in your application build.gradle file like this
+```dependencies {
+    implementation 'com.yudiz:vinay-utillib:{LATEST_VERSION}'
+}```
 
 
 dialog with camera and gallery
