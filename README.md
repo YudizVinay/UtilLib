@@ -4,9 +4,9 @@
 Library contains Location, Run time Permission, Image chooser in Android Project
 
 add a dependency in your application build.gradle file like this
-```dependencies {
-    implementation 'com.yudiz:vinay-utillib:{LATEST_VERSION}'
-}```
+```dependencies {```
+```    implementation 'com.yudiz:vinay-utillib:{LATEST_VERSION}'```
+```}```
 
 
 dialog with camera and gallery
