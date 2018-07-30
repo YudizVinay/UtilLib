@@ -5,6 +5,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
+import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
@@ -70,7 +71,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             @Override
                             public void onImageChoose(String path) {
                                 ivPath.setText("" + path);
-                                Glide.with(MainActivity.this).load(new File(path)).into(iv);
+                                if (!TextUtils.isEmpty(path))
+                                    Glide.with(MainActivity.this).load(new File(path)).into(iv);
                             }
                         });
                 break;
@@ -85,10 +87,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.getlocation:
                 UtilLib.getLocationManager(MainActivity.this).getLocation(new OnLocationPickListener() {
-                    @Override
-                    public void getLastLocation(Location location) {
-                        locationInfo.setText("lng:" + location.getLongitude() + " lat:" + location.getLatitude());
-                    }
 
                     @Override
                     public void onLocationChanged(Location location) {
