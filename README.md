@@ -38,10 +38,6 @@ UtilLib.getPermission(mContext, new String[]{ Manifest.permission.CAMERA })
 get location from either GPS or Network
 ```
 UtilLib.getLocationManager(mContext).getLocation(new OnLocationPickListener() {
-    @Override
-    public void getLastLocation(Location location) {
-        Log.d("Tag", "lng:" + location.getLongitude() + " lat:" + location.getLatitude());
-    }
 
     @Override
     public void onLocationChanged(Location location) {
