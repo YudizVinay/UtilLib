@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         });
                 break;
             case R.id.getlocation:
-                UtilLib.getLocationManager(MainActivity.this).getLocation(new OnLocationPickListener() {
+                UtilLib.getLocationManager(MainActivity.this).enqueue(new OnLocationPickListener() {
 
                     @Override
                     public void onLocationChanged(Location location) {
